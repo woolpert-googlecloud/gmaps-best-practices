@@ -1,0 +1,66 @@
+---
+---
+
+// Breakpoints
+$large-breakpoint: 80em;
+$medium-breakpoint: 48em;
+
+// Headers
+$header-heading-color: #fff;
+$header-bg-color: #248dc1;
+$header-bg-color-secondary: #898b8e;
+$section-headings-color: #248dc1;
+
+// Text
+$body-text-color: #63656a;
+$body-link-color: #006098;
+$blockquote-text-color: #898b8e;
+
+// Code
+$code-bg-color: #dedede;
+$code-text-color: #323336;
+
+@import "{{ site.theme }}";
+
+body {
+    font-family: 'Myriad Pro', 'Calibri', 'PT Sans', sans-serif;
+}
+
+.page-header {
+    background-image: url("https://woolpert.com/wp-content/uploads/2018/07/google_maps_header_2.jpg");
+    background-size: cover;
+    background-position: center center;
+      
+    @include large {
+        padding: 2rem 4rem;
+    }
+    
+    @include medium {
+        padding: 1rem 2rem;
+    }
+    
+    @include small {
+        padding: 1rem 0.5rem;
+    }
+}
+
+.project-tagline {
+    color: #ffffff;
+}
+
+.main-content {
+    word-wrap: normal;
+  
+    @include large {
+      max-width: 80rem;
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Avenir Light', 'Century Gothic', 'Nunito', sans-serif;
+    font-weight: normal;
+}
+
+.site-footer {
+    font-size: 0.66rem;
+}
