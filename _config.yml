@@ -3,3 +3,5 @@ theme: jekyll-theme-cayman
 
 title: Maps Platform Best Practices
 description: Get the most from the Google Maps APIs
+
+google_analytics: UA-63964514-2
