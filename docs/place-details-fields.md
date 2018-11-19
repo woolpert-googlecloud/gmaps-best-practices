@@ -82,13 +82,11 @@ If you are using a `PlacesService` instance for **Find Place** or **Place Detail
 > ⚠️ The `nearbySearch` and `textSearch` functions do not support field filtering, and will be billed for all three categories of data.
 
 ```js
-var autocomplete = new google.maps.places.Autocomplete(
-  var placesService = new google.maps.places.PlacesService("places-attr-container"),
-  placesService.getDetails({
-    placeId: "ChIJlQ-ho9OEQIgRLQeLM-VMRMc",
-    fields: ["name", "address_component", "formatted_address", "geometry.location"]
-  }
-);
+var placesService = new google.maps.places.PlacesService(document.getElementById("places-attr-container"),
+placesService.getDetails({
+  placeId: "ChIJlQ-ho9OEQIgRLQeLM-VMRMc",
+  fields: ["name", "address_component", "formatted_address", "geometry.location"]
+}, callback);
 
 function callback(place, status){
   if (status == google.maps.places.PlacesServiceStatus.OK) {
