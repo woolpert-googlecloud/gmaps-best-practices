@@ -10,6 +10,8 @@ As a Premier Partner in Google's ecosystem, the Woolpert team sees a lot of comm
 
 [API Key Best Practices](https://developers.google.com/maps/api-key-best-practices)
 
+[Manage Your Client ID](https://google.secure.force.com/apex/MapsDomain) (former Maps for Work/Premium Plan users only)
+
 ## Google Support Resources
 [Maps Platform Support Page](https://console.cloud.google.com/google/maps-apis/support)
 
