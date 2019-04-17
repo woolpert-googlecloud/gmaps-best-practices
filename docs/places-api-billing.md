@@ -18,10 +18,10 @@ In your billing report, you will see a line item for each Places API service you
 
 **Autocomplete Per-Session** is unique, there is *no cost for these requests*. However, each Autocomplete session ends with a Place Details request, and *you pay for those Place Details requests* (see below), which will appear as their own SKU on your bill.
 
-> ⚠️ If you are using Autocomplete but have not implemented **session tokens**, your usage will be billed *per-character* (see below). Refer to [Google's documentation](https://developers.google.com/maps/billing/understanding-cost-of-use#about-autocomplete-sessions) to learn about the new session tokens feature and how to implement them in your code. This affects all existing applications not using Google's first-party Autocomplete widgets.
+> ⚠️ If you are using Autocomplete but have not implemented **session tokens**, your usage will be billed *per-request* (see below). Refer to [Google's documentation](https://developers.google.com/maps/billing/understanding-cost-of-use#about-autocomplete-sessions) to learn about the new session tokens feature and how to implement them in your code. This affects all existing applications not using Google's first-party Autocomplete widgets.
 
 Some other services have a CPM associated with them, but do not result in data SKU charges. You *pay for every request* made to these services, but *no data charges*:
-- **Autocomplete Per-Character**
+- **Autocomplete Per-Request**
 - **Place Photo**
 
 The remaining Places API services all result in data SKU charges. Based on the fields you request, you will see corresponding data SKU usage for each request to these services. You *pay for each request* to these services, *plus the Contact and/or Atmosphere data charges* (if applicable):
