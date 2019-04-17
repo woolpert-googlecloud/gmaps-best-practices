@@ -18,8 +18,3 @@ As a Premier Partner in Google's ecosystem, the Woolpert team sees a lot of comm
 [Premium Plan Support Portal (Legacy)](https://google.secure.force.com)
 
 [Google Maps on Stack Overflow](https://stackoverflow.com/questions/tagged/google-maps)
-
-# Contact Us
-If you are a current Maps Platform or Premium Plan client with Woolpert, email us at [cloudsuccess@woolpert.com](mailto:cloudsuccess@woolpert.com) or contact your Account Manager.
-
-To find out more about Woolpert and the benefits of working with a Premier Partner, fill out the [contact us form](https://woolpert.com/google/#gcontact) on our website.
