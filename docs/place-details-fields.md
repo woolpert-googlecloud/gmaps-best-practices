@@ -87,17 +87,48 @@ placesService.getDetails({
   placeId: "ChIJlQ-ho9OEQIgRLQeLM-VMRMc",
   fields: ["name", "address_component", "formatted_address", "geometry.location"]
 }, callback);
-
-function callback(place, status){
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    console.log(place);
-  }
-}
 ```
 
 ### Places Mobile SDKs for Android/iOS
+> ⚠️ On January 29, 2019 Google released new versions of the Places SDKs for both Android and iOS. These new SDKs are officially supported on Maps Platform and include the latest Places API functionality, such a s field filtering. The previous SDKs are now deprecated and developers have until **July 29, 2019** to upgrade their applications. See [this blog post](https://woolpert.com/resource/welcome-to-the-google-maps-platform-places-sdk/) for details.
 
-The current versions of the Places mobile SDKs for Android and iOS do not support field filtering. Google is working on new versions of the SDKs that will include field filtering as well as other new Maps Platform capabilities. Once Google releases those new versions, the current SDKs will be deprecated. Until that time, mobile Places API through the SDKs is free, following the old Standard Plan model.
+#### Android
+If you are using Google's built-in Autocomplete widget, configure the fields you want when you initialize the intent. 
+```java
+List<Place.Field> fields = Arrays.asList(Place.Field.NAME, Place.Field.ADDRESS_COMPONENTS, Place.Field.ADDRESS, Place.Field.LAT_LNG);
+
+Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN, fields).build(this);
+```
+Or, if you are retrieving Place Details programatically, include the fields you want in your `FetchPlaceRequest` or `FindCurrentPlaceRequest`.
+```java
+String placeId = "ChIJlQ-ho9OEQIgRLQeLM-VMRMc";
+List<Place.Field> fields = Arrays.asList(Place.Field.NAME, Place.Field.ADDRESS_COMPONENTS, Place.Field.ADDRESS, Place.Field.LAT_LNG);
+
+// Fetch Place by ID
+FetchPlaceRequest detailsRequest = FetchPlaceRequest.builder(placeId, fields).build();
+// Find User's Current Place
+FindCurrentPlaceRequest currentPlaceRequest = FindCurrentPlaceRequest.builder(fields).build();
+```
+
+#### iOS
+If you are using Google's built-in Autocomplete widget, configure the fields you want when you initialize the controller.
+```swift
+let autocompleteController = GMSAutocompleteViewController()
+autocompleteController.delegate = self
+
+let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |  UInt(GMSPlaceField.addressComponents.rawValue) |  UInt(GMSPlaceField.formattedAddress.rawValue) |  UInt(GMSPlaceField.coordinate.rawValue))!
+autocompleteController.placeFields = fields
+```
+Or, if you are retrieving Place Details programatically, include the fields you want in your `fetchPlace()` or `findPlaceLikelihoodsFromCurrentLocation()` request.
+```swift
+let placeID = "ChIJlQ-ho9OEQIgRLQeLM-VMRMc"
+let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |  UInt(GMSPlaceField.addressComponents.rawValue) |  UInt(GMSPlaceField.formattedAddress.rawValue) |  UInt(GMSPlaceField.coordinate.rawValue))!
+
+// Fetch Place by ID
+placesClient?.fetchPlace(fromPlaceID: placeId, placeFields: fields, sessionToken: nil, callback: {...})
+// Find User's Current Place
+placesClient?.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: fields, callback: {...})
+```
 
 
 ## References
