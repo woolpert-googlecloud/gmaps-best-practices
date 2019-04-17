@@ -25,7 +25,7 @@ Here is a breakdown of the fields included in each category. Evaluate which of t
 | --- | --- |
 | **Basic** | `address_component`, `adr_address`, `alt_id`, `formatted_address`, `geometry` (location), `icon`, `id`, `name`, `permanently_closed`, `photo`, `place_id`, `plus_code`, `scope`, `type`, `url`, `utc_offset`, `vicinity` |
 | **Contact** | `formatted_phone_number`, `international_phone_number`, `opening_hours`, `website` |
-| **Atmosphere** | `price_level`, `rating`, `review` |
+| **Atmosphere** | `price_level`, `rating`, `review`, `user_ratings_total` |
 
 See the [Place Details results documentation](https://developers.google.com/places/web-service/details#PlaceDetailsResults) for detailed descriptions of each field.
 
